@@ -11,7 +11,7 @@
 }
 
 body {
-  background-image: url('./public/LM.avif');
+  background-image: url('../public/LM.avif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -312,7 +312,7 @@ nav .logo.space {
 
 .book-card button {
   background-color: #f1f1f1;
-  background-image: url('/LM.avif'); /* Correct path */
+  background-image: url('../public/LM.avif'); /* Correct path */
   color: rgb(10, 10, 10);
   border: none;
   padding: 0.5rem;
