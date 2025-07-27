@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>BookHunt - Free PDF Downloads</title>
+    <meta name="description" content="Hunt for amazing books and download PDFs instantly. Your ultimate book discovery platform.">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#533483">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="BookHunt">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzUzMzQ4MyIvPgo8c3ZnIHg9IjgiIHk9IjgiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0xOCA2djEySDZ2LTZINEY0aDJ2MTRoMTZWNGgtMnYyWiIvPgo8L3N2Zz4KPC9zdmc+">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="particles-background"></div>
+    
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <h1 class="nav__title">📚 BookHunt</h1>
+            </div>
+            <div class="nav__controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme mode">
+                    <svg class="theme-icon theme-icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06L5.106 17.834a.75.75 0 001.06 1.06l1.592-1.591zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.592a.75.75 0 00-1.061 1.061l1.59 1.591z"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/>
+                    </svg>
+                    <svg class="theme-icon theme-icon--gradient" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="nav__search">
+                <div class="search__container">
+                    <input type="text" class="search__input animated-search" placeholder="Hunt for amazing books..." aria-label="Search books" autocomplete="off">
+                    <button class="search__button" aria-label="Search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                    <div class="search__autocomplete" id="search-autocomplete"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <h2 class="hero__title rotating-text" id="rotating-title">Hunt Amazing Books</h2>
+            <p class="hero__subtitle">Your ultimate destination for free PDF books. Hunt, discover, and download instantly with smart search technology.</p>
+        </section>
+
+        <section class="filters">
+            <div class="filters__container">
+                <button class="filter__btn filter__btn--active" data-filter="trending">🔥 Trending</button>
+                <button class="filter__btn" data-filter="new-releases">🆕 New Releases</button>
+                <button class="filter__btn" data-filter="bestsellers">⭐ Bestsellers</button>
+                <button class="filter__btn" data-filter="fiction">📚 Fiction</button>
+                <button class="filter__btn" data-filter="mystery">🕵️ Mystery</button>
+                <button class="filter__btn" data-filter="sci-fi">🚀 Sci-Fi</button>
+                <button class="filter__btn" data-filter="romance">💕 Romance</button>
+                <button class="filter__btn" data-filter="self-help">💪 Self-Help</button>
+                <button class="filter__btn" data-filter="technology">💻 Technology</button>
+                <button class="filter__btn" data-filter="business">💼 Business</button>
+            </div>
+        </section>
+
+        <section class="books">
+            <div class="books__grid" id="books-grid">
+                <!-- Book cards will be dynamically generated here -->
+            </div>
+        </section>
+
+        <div class="loading" id="loading">
+            <div class="loading__spinner"></div>
+            <p>Loading amazing books...</p>
+        </div>
+    </main>
+
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+
+    <div class="toast" id="toast"></div>
+
+    <footer class="footer">
+        <p>&copy; 2025 BookHunt. All rights reserved.</p>
+    </footer>
+
+    <script src="js/bookData.js"></script>
+    <script src="js/googleBooksAPI.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

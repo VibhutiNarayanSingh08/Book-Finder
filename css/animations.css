@@ -1,0 +1,427 @@
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(83, 52, 131, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(83, 52, 131, 0.8), 0 0 30px rgba(83, 52, 131, 0.6);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rotate3d {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 50% {
+        border-color: transparent;
+    }
+    51%, 100% {
+        border-color: var(--accent-purple);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+/* Typing Animation for Hero Title */
+.typing-animation {
+    overflow: hidden;
+    border-right: 3px solid var(--accent-purple);
+    white-space: nowrap;
+    animation: typing 3s steps(20) 1s 1 normal both, blink 1s infinite;
+}
+
+/* Staggered Animations */
+.stagger-1 {
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.stagger-2 {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.stagger-3 {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.stagger-4 {
+    animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.stagger-5 {
+    animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+.stagger-6 {
+    animation: fadeInUp 0.6s ease-out 0.6s both;
+}
+
+/* Header Animations */
+.header {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.nav__title {
+    animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+.nav__search {
+    animation: slideInRight 0.8s ease-out 0.4s both;
+}
+
+/* Hero Animations */
+.hero__title {
+    animation-delay: 0.5s;
+}
+
+.hero__subtitle {
+    animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+/* Filter Button Ripple Effect */
+.filter__btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.filter__btn::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    pointer-events: none;
+}
+
+.filter__btn:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+/* Book Card Advanced Animations */
+.book-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.book-card:hover {
+    animation: pulse 2s infinite;
+}
+
+.book-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+.book-card:hover .book-cover::before {
+    transform: translateX(100%);
+}
+
+/* Loading Spinner Advanced */
+.loading__spinner {
+    position: relative;
+}
+
+.loading__spinner::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-purple);
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite;
+}
+
+/* Scroll Animations */
+.scroll-trigger {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-trigger.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Toast Animations */
+.toast {
+    animation: slideInRight 0.5s ease-out;
+}
+
+.toast.hide {
+    animation: slideInRight 0.5s ease-out reverse;
+}
+
+/* Button Press Animation */
+.btn-press {
+    animation: bounceIn 0.3s ease-out;
+}
+
+/* Error State Animation */
+.error-shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Success State Animation */
+.success-glow {
+    animation: glow 2s ease-in-out;
+}
+
+/* Floating Elements */
+.float-element {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 3D Hover Effects */
+.hover-3d {
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg);
+}
+
+/* Advanced Button Hover */
+.download-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.download-btn:hover::before {
+    left: 100%;
+}
+
+/* Parallax Elements */
+.parallax-slow {
+    transform: translateZ(0);
+    animation: float 8s ease-in-out infinite;
+}
+
+.parallax-medium {
+    transform: translateZ(0);
+    animation: float 6s ease-in-out infinite reverse;
+}
+
+.parallax-fast {
+    transform: translateZ(0);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Intersection Observer Classes */
+.fade-in-observer {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-observer.observed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left-observer {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+
+.slide-in-left-observer.observed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right-observer {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+}
+
+.slide-in-right-observer.observed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale Animation */
+.scale-in-observer {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease-out;
+}
+
+.scale-in-observer.observed {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Performance Optimizations */
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .typing-animation {
+        animation: none;
+        border-right: none;
+    }
+}

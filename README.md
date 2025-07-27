@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# 📚 BookHunt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive book discovery platform with real-time search and beautiful UI.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- 🔍 **Auto-complete Search** - Smart suggestions with Google Books API integration
+- 🎨 **3 Theme Modes** - Dark, Light, and Gradient backgrounds
+- 📱 **Mobile Responsive** - Optimized for all devices
+- ⌨️ **Typewriter Animation** - Dynamic rotating hero text
+- 🎯 **Smart PDF Search** - Google "I'm Feeling Lucky" integration
+- 🌟 **Glassmorphism UI** - Modern glass-like design effects
+- 📲 **PWA Ready** - Install like a native app
 
-### `npm start`
+## 🚀 Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd Book-Finder
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Start local server**
+   ```bash
+   python3 -m http.server 8000
+   ```
 
-### `npm test`
+3. **Open in browser**
+   ```
+   http://localhost:8000
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🎯 Usage
 
-### `npm run build`
+- **Search**: Type in the search bar for auto-complete suggestions
+- **Themes**: Click the theme toggle (🌙/☀️/⭐) to switch modes
+- **Download**: Click download button to search for free PDFs
+- **Mobile**: Fully responsive design works on all devices
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+BookHunt/
+├── index.html          # Main HTML file
+├── manifest.json       # PWA manifest
+├── css/
+│   ├── main.css       # Core styles + themes
+│   ├── animations.css # Animation effects
+│   └── responsive.css # Mobile responsiveness
+└── js/
+    ├── main.js        # Main application logic
+    ├── googleBooksAPI.js # Google Books integration
+    ├── bookData.js    # Local book data
+    └── animations.js  # Animation controller
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🌐 Live Demo
 
-### `npm run eject`
+Access your BookHunt app at: `https://your-domain.com`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🔧 Technologies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **API**: Google Books API (no key required)
+- **Design**: Glassmorphism, CSS Grid, Flexbox
+- **PWA**: Service Worker ready
+- **Responsive**: Mobile-first design
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📱 Mobile Features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Touch-friendly interface
+- Swipe gestures
+- Optimized loading
+- App-like experience
 
-## Learn More
+## 🎨 Themes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. **Dark Mode** - Original cyberpunk aesthetic
+2. **Light Mode** - Clean, minimal design  
+3. **Gradient Mode** - Animated rainbow background
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📄 License
 
-### Code Splitting
+© 2025 BookHunt. All rights reserved.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made with ❤️ for book lovers everywhere.
